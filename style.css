@@ -1,0 +1,60 @@
+      
+        @font-face {
+    font-family: 'BPG Phone Sans Bold';
+    src: url('bpg_extrasquare_mtavruli_2009.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+*{
+    font-family: 'BPG Phone Sans Bold';
+    font-weight: bold;
+}
+        body {
+            
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        
+        input, button, select {
+            touch-action: manipulation;
+        }
+
+        /* Interactive Marquee Container */
+        .marquee-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .marquee-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+
+        .marquee-wrapper:hover .animate-marquee,
+        .marquee-wrapper:active .animate-marquee,
+        .marquee-wrapper.is-dragging .animate-marquee {
+            animation-play-state: paused;
+        }
+
+        /* 3D Card Depth & Shadow utilities */
+        .card-3d {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+        }
+        .card-3d:hover {
+            transform: translateY(-4px) scale(1.01);
+            
+        }
